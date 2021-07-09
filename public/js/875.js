@@ -1,0 +1,1 @@
+(self.webpackChunk=self.webpackChunk||[]).push([[875],{875:(e,c,n)=>{"use strict";n.r(c),n.d(c,{default:()=>t});var o=n(5166),r={class:"h-screen"},l=(0,o.createVNode)("p",null,"Portfolio page placeholder",-1);const s={components:{},render:function(e,c,n,s,t,a){return(0,o.openBlock)(),(0,o.createBlock)("div",r,[l])}},t=s}}]);
