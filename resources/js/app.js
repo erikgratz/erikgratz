@@ -12,7 +12,7 @@ const { toast, snackbar } = require('tailwind-toast')
 Echo.channel('contacts').listen('ContactReqCreated', (e) => {
     // console.log(e)
     toast()
-        .success(e.name, " just made contact!")
+        .default(e.name, " just made contact!")
         .from('bottom','end')
         .as('pill')
         .for(50000).show()
