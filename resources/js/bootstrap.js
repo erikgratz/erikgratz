@@ -30,7 +30,7 @@ import Echo from 'laravel-echo';
 window.Pusher = require('pusher-js');
 
 window.Pusher.log = function(message){
-    // window.console.log(message)
+     window.console.log(message)
 }
 
 window.Echo = new Echo({
