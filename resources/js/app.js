@@ -13,6 +13,7 @@ Echo.channel('contacts').listen('ContactReqCreated', (e) => {
     // console.log(e)
     toast()
         .default(e.name, " just made contact!")
+        .with({color: 'bg-mint'})
         .from('bottom','end')
         .as('pill')
         .for(50000).show()
