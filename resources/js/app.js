@@ -5,21 +5,14 @@ import {createApp, h} from 'vue';
 import {App as InertiaApp, plugin as InertiaPlugin} from '@inertiajs/inertia-vue3';
 import {InertiaProgress} from '@inertiajs/progress';
 import MyHeader from './Layouts/MyHeader';
+import Toaster from '@meforma/vue-toaster';
+
 const el = document.getElementById('app');
 
-import { toast, snackbar } from 'tailwind-toast';
-
-Echo.channel('contacts').listen('ContactReqCreated', (e) => {
-    // console.log(e)
-    toast()
-        .success(e.name, " just made contact!")
-        .from('bottom','center')
-        .as('pill')
-        .for(5000).show()
-})
 
 
-createApp({
+
+let app = createApp({
     render: () =>
         h(InertiaApp, {
             initialPage: JSON.parse(el.dataset.page),
@@ -37,6 +30,20 @@ createApp({
 })
     .mixin({methods: {route}})
     .use(InertiaPlugin)
+    .use(Toaster)
     .mount(el);
 
+
 InertiaProgress.init({color: '#05FaB7'});
+
+Echo.channel('contacts').listen('ContactReqCreated', (e) => {
+    app.$toast.success(e.name + " just made contact!", {
+        onClick: function () {
+            app.$inertia.get('/contact')
+        },
+    })
+})
+
+window.Echo.connector.pusher.connection.bind('connected', (payload) => {
+    app.$toast.success("Websocket Connected!")
+})

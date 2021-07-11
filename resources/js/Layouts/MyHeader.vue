@@ -91,6 +91,18 @@ import ContactBox from "@/Layouts/ContactBox"
 import Dropdown from "@/Components/Dropdown";
 import {mixin as VueClickAway} from 'vue3-click-away'
 import FadeTransition from "@/Components/FadeTransition";
+// import Echo from 'laravel-echo'
+//
+// Echo.channel('contacts').listen('ContactReqCreated', (e) => {
+//     // console.log(e)
+//     // toast()
+//     //     .success(e.name, " just made contact!")
+//     //     .as('pill')
+//     //     .from('bottom','center')
+//     //     .for(5000).show()
+//     //this.$toasted.show(e.name + " just made contact!")
+//
+// })
 
 export default {
     mixins: [VueClickAway],
