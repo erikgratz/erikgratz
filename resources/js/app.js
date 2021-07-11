@@ -7,14 +7,15 @@ import {InertiaProgress} from '@inertiajs/progress';
 import MyHeader from './Layouts/MyHeader';
 const el = document.getElementById('app');
 
-const { toast, snackbar } = require('tailwind-toast')
+import { toast, snackbar } from 'tailwind-toast';
 
 Echo.channel('contacts').listen('ContactReqCreated', (e) => {
     // console.log(e)
     toast()
         .success(e.name, " just made contact!")
+        .from('bottom','center')
         .as('pill')
-        .for(50000).show()
+        .for(5000).show()
 })
 
 

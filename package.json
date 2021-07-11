@@ -36,7 +36,7 @@
         "@tiptap/vue-3": "*",
         "@vue-hero-icons/solid": "^1.7.2",
         "qrcode.vue": "^3.2.2",
-        "tailwind-toast": "^1.0.9",
+        "tailwind-toast": "1.0.9",
         "vue-click-outside": "^1.1.0",
         "vue-tailwind": "^2.2.1",
         "vue3-click-away": "^1.2.1",
