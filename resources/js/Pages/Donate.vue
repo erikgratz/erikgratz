@@ -2,7 +2,7 @@
     <div class="flex flex-row justify-center items-center">
         <img src="storage/images/face.png"
              class="shadow rounded-full h-32 align-middle border-none transition duration-1000 transform hover:scale-150"/>
-        <div class="flex flex-col justify-center items-center m-8 p-4 border border-purple-600 text-center">
+        <div class="flex flex-col justify-center items-center mt-16 md:mt-8 m-8 p-4 border border-purple-600 text-center">
             <p> Hey, no pressure, but if you like what you see here, or you use what I built, </p>
             <p> or you just like me, I would love a donation. </p>
             <p> Alternatively, donate to a charity or bail fund noted below or in your area.</p>
@@ -12,7 +12,7 @@
             <p> Thank you very much. </p>
         </div>
     </div>
-    <div class="flex flex-row justify-center items-center">
+    <div class="flex flex-col md:flex-row justify-center items-center">
         <div class="flex flex-col justify-center items-center m-8 p-4 border border-purple-600">
             <QRCodeElement
                 v-for="(value, name) in walletCodes"

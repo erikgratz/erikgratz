@@ -1,12 +1,12 @@
 <template>
     <main>
         <nav
-            class="bg-black shadow animated fixed flex w-full"
+            class="bg-black shadow animated fixed w-full"
             :class="{ 'scrolled': !view.atTopOfPage}"
             role="navigation"
         >
-            <div class="container mx-auto p-4 flex flex-wrap items-center md:flex-no-wrap">
-                <div class="mr-4 md:mr-8">
+            <div class="container p-4 flex flex-row items-center justify-center">
+                <div class="mr-4 ">
                     <inertia-link href="/login" rel="login">
                         <svg class="w-10 h-10 text-purple-600 transition duration-1000 transform hover:scale-150"
                              width="54" height="54" viewBox="0 0 305.033 305.033" xmlns="http://www.w3.org/2000/svg">
@@ -16,7 +16,7 @@
                         </svg>
                     </inertia-link>
                 </div>
-                <div class="ml-auto md:hidden">
+                <div class="mx-auto">
                     <button @click="isNavOpen = !isNavOpen"
                             class="flex items-center px-3 py-2 border rounded border-purple-600" type="button">
                         <svg class="h-3 w-3 text-purple-600" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -25,54 +25,53 @@
                         </svg>
                     </button>
                 </div>
-                <div class="w-full md:w-auto md:flex-grow md:flex md:items-center">
-                    <ul v-if="isNavOpen"
-                        class="flex flex-col mt-4 -mx-4 pt-4 border-t md:flex-row md:items-center md:mx-0 md:mt-0 md:pt-0 md:mr-4 lg:mr-8 md:border-0">
-                        <li>
-                            <inertia-link class="block px-4 py-1 md:p-2 lg:px-4"
-                                          :class="($page.component == 'Home') ? selectedColor : unselectedColor"
-                                          href="/"
-                                          title="Link">Home
-                            </inertia-link>
-                        </li>
-                        <li>
-                            <inertia-link class="block px-4 py-1 md:p-2 lg:px-4"
-                                          :class="($page.component == 'Blog') ? selectedColor : unselectedColor"
-                                          href="/blog"
-                                          title="Active Link">Blog
-                            </inertia-link>
-                        </li>
-                        <li>
-                            <inertia-link class="block px-4 py-1 md:p-2 lg:px-4"
-                                          :class="($page.component == 'Portfolio') ? selectedColor : unselectedColor"
-                                          href="/portfolio" title="Link">Portfolio
-                            </inertia-link>
-                        </li>
-                        <li v-if="!['Home','Blog','Portfolio'].includes( $page.component)">
-                            <inertia-link class="block px-4 py-1 md:p-2 lg:px-4"
-                                          :class="selectedColor"
-                                          :href="$page.url" title="Link">{{ $page.component }}
-                            </inertia-link>
-                        </li>
-                    </ul>
-                    <ul class="flex flex-col mt-4 -mx-4 pt-4 border-t md:flex-row md:items-center md:mx-0 md:ml-auto md:mt-0 md:pt-0 md:border-0">
-                        <li>
-                            <img src="storage/images/face.png"
-                                 alt="..."
-                                 class="ring-mint shadow rounded-full h-12 align-middle border-none transition duration-1000 transform hover:scale-150"
-                                 v-on:click="toggleContactMenu"
-                                 ref="faceButton"
-                            />
-                            <contact-box
-                                v-if="this.isMenuOpen"
-                                v-click-away="closeContactMenu"
-                                v-on:close-box-from-inside="this.isMenuOpen = false"
-                                :class="{ 'scrolled': !view.atTopOfPage}"
-                            />
-                        </li>
-                    </ul>
+                <div class="flex-col">
+                    <img src="storage/images/face.png"
+                         alt="..."
+                         class="ring-mint shadow rounded-full h-12 align-middle border-none transition duration-1000 transform hover:scale-150"
+                         v-on:click="toggleContactMenu"
+                         ref="faceButton"
+                    />
+                    <contact-box
+                        v-if="this.isMenuOpen"
+                        v-click-away="closeContactMenu"
+                        v-on:close-box-from-inside="this.isMenuOpen = false"
+                        :class="{ 'scrolled': !view.atTopOfPage}"
+                    />
                 </div>
+
             </div>
+        <div v-if="isNavOpen" class="w-full flex border-t border-mint">
+            <ul
+                class="flex flex-row">
+                <li>
+                    <inertia-link class="block px-4 py-1 md:p-2 lg:px-4"
+                                  :class="($page.component == 'Home') ? selectedColor : unselectedColor"
+                                  href="/"
+                                  title="Link">Home
+                    </inertia-link>
+                </li>
+                <li>
+                    <inertia-link class="block px-4 py-1 md:p-2 lg:px-4"
+                                  :class="($page.component == 'Blog') ? selectedColor : unselectedColor"
+                                  href="/blog"
+                                  title="Active Link">Blog
+                    </inertia-link>
+                </li>
+                <li>
+                    <inertia-link class="block px-4 py-1 md:p-2 lg:px-4"
+                                  :class="($page.component == 'Portfolio') ? selectedColor : unselectedColor"
+                                  href="/portfolio" title="Link">Portfolio
+                    </inertia-link>
+                </li>
+                <li v-if="!['Home','Blog','Portfolio'].includes( $page.component)">
+                    <inertia-link class="block px-4 py-1 md:p-2 lg:px-4"
+                                  :class="selectedColor"
+                                  :href="$page.url" title="Link">{{ $page.component }}
+                    </inertia-link>
+                </li>
+            </ul>
+        </div>
         </nav>
 <!--        <article>-->
 <!--            <div class="bg-black h-full flex flex-col min-h-screen text-purple-600 font-sans">-->

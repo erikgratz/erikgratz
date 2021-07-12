@@ -1,23 +1,19 @@
 <template>
 
     <div class="w-full h-screen font-sans bg-cover bg-landscape">
-        <div class="w-full flex flex-row">
-            <div class="flex-col">
+        <div class="w-full flex flex-row my-8 items-center justify-center">
                 <social-button
                     :link="resumeUrl"
                     name="My Resume"
                     alt-text="A Link to My Resume"
                 ></social-button>
-            </div>
-            <div class="flex-col">
                 <social-button
                     :link="'mailto:erik@erikgratz.com'"
                     name="Direct Email"
                     alt-text="A Link to send me an Email"
                 ></social-button>
-            </div>
         </div>
-        <div class="container flex items-center justify-center flex-1 h-full mx-auto">
+        <div class="container flex items-center justify-center flex-1 h-auto mx-auto">
             <div class="w-full max-w-lg">
                 <div class="leading-loose">
                     <form

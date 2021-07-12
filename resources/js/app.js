@@ -4,7 +4,7 @@ require('./bootstrap');
 import {createApp, h} from 'vue';
 import {App as InertiaApp, plugin as InertiaPlugin} from '@inertiajs/inertia-vue3';
 import {InertiaProgress} from '@inertiajs/progress';
-import MyHeader from './Layouts/MyHeader';
+import Headers from './Layouts/Headers';
 import Toaster from '@meforma/vue-toaster';
 
 const el = document.getElementById('app');
@@ -21,7 +21,7 @@ let app = createApp({
                     if (page.layout === undefined) {
                         if (page.components && !Object.keys(page.components)
                             .includes('BreezeAuthenticatedLayout')){
-                            page.layout = MyHeader
+                            page.layout = Headers
                         }
                     }
                     return page
