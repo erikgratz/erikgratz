@@ -41,37 +41,39 @@
                 </div>
 
             </div>
-        <div v-if="isNavOpen" class="w-full flex border-t border-mint">
-            <ul
-                class="flex flex-row">
-                <li>
-                    <inertia-link class="block px-4 py-1 md:p-2 lg:px-4" @click="isNavOpen = false"
-                                  :class="($page.component == 'Home') ? selectedColor : unselectedColor"
-                                  href="/"
-                                  title="Link">Home
-                    </inertia-link>
-                </li>
-                <li>
-                    <inertia-link class="block px-4 py-1 md:p-2 lg:px-4" @click="isNavOpen = false"
-                                  :class="($page.component == 'Blog') ? selectedColor : unselectedColor"
-                                  href="/blog"
-                                  title="Active Link">Blog
-                    </inertia-link>
-                </li>
-                <li>
-                    <inertia-link class="block px-4 py-1 md:p-2 lg:px-4" @click="isNavOpen = false"
-                                  :class="($page.component == 'Portfolio') ? selectedColor : unselectedColor"
-                                  href="/portfolio" title="Link">Portfolio
-                    </inertia-link>
-                </li>
-                <li v-if="!['Home','Blog','Portfolio'].includes( $page.component)">
-                    <inertia-link class="block px-4 py-1 md:p-2 lg:px-4" @click="isNavOpen = false"
-                                  :class="selectedColor"
-                                  :href="$page.url" title="Link">{{ $page.component }}
-                    </inertia-link>
-                </li>
-            </ul>
-        </div>
+            <slide-transition>
+                <div v-if="isNavOpen" class="w-full flex border-t border-mint" style="">
+                    <ul
+                        class="flex flex-row">
+                        <li>
+                            <inertia-link class="block px-4 py-1 md:p-2 lg:px-4" @click="isNavOpen = false"
+                                          :class="($page.component == 'Home') ? selectedColor : unselectedColor"
+                                          href="/"
+                                          title="Link">Home
+                            </inertia-link>
+                        </li>
+                        <li>
+                            <inertia-link class="block px-4 py-1 md:p-2 lg:px-4" @click="isNavOpen = false"
+                                          :class="($page.component == 'Blog') ? selectedColor : unselectedColor"
+                                          href="/blog"
+                                          title="Active Link">Blog
+                            </inertia-link>
+                        </li>
+                        <li>
+                            <inertia-link class="block px-4 py-1 md:p-2 lg:px-4" @click="isNavOpen = false"
+                                          :class="($page.component == 'Portfolio') ? selectedColor : unselectedColor"
+                                          href="/portfolio" title="Link">Portfolio
+                            </inertia-link>
+                        </li>
+                        <li v-if="!['Home','Blog','Portfolio'].includes( $page.component)">
+                            <inertia-link class="block px-4 py-1 md:p-2 lg:px-4" @click="isNavOpen = false"
+                                          :class="selectedColor"
+                                          :href="$page.url" title="Link">{{ $page.component }}
+                            </inertia-link>
+                        </li>
+                    </ul>
+                </div>
+            </slide-transition>
         </nav>
 <!--        <article>-->
 <!--            <div class="bg-black h-full flex flex-col min-h-screen text-purple-600 font-sans">-->
@@ -88,22 +90,11 @@ import ContactBox from "@/Layouts/ContactBox"
 import Dropdown from "@/Components/Dropdown";
 import {mixin as VueClickAway} from 'vue3-click-away'
 import FadeTransition from "@/Components/FadeTransition";
-// import Echo from 'laravel-echo'
-//
-// Echo.channel('contacts').listen('ContactReqCreated', (e) => {
-//     // console.log(e)
-//     // toast()
-//     //     .success(e.name, " just made contact!")
-//     //     .as('pill')
-//     //     .from('bottom','center')
-//     //     .for(5000).show()
-//     //this.$toasted.show(e.name + " just made contact!")
-//
-// })
+import SlideTransition from "../Components/SlideTransition";
 
 export default {
     mixins: [VueClickAway],
-    components: {FadeTransition, Dropdown, ContactBox},
+    components: {SlideTransition, FadeTransition, Dropdown, ContactBox},
     props: {
         noteCount: Number,
     },
