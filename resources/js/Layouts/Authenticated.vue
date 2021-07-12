@@ -15,9 +15,9 @@
 
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <breeze-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
-                                    Dashboard
-                                </breeze-nav-link>
+<!--                                <breeze-nav-link :href="route('dashboard')" :active="route().current('dashboard')">-->
+<!--                                    Dashboard-->
+<!--                                </breeze-nav-link>-->
                                 <breeze-nav-link :href="route('posts')" :active="route().current('posts')">
                                     Blog Posts
                                 </breeze-nav-link>
@@ -67,11 +67,14 @@
                 <!-- Responsive Navigation Menu -->
                 <div :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}" class="sm:hidden">
                     <div class="pt-2 pb-3 space-y-1">
-                        <breeze-responsive-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
-                            Dashboard
-                        </breeze-responsive-nav-link>
+<!--                        <breeze-responsive-nav-link :href="route('dashboard')" :active="route().current('dashboard')">-->
+<!--                            Dashboard-->
+<!--                        </breeze-responsive-nav-link>-->
                         <breeze-responsive-nav-link :href="route('posts')" :active="route().current('posts')">
                             Blog posts
+                        </breeze-responsive-nav-link>
+                        <breeze-responsive-nav-link :href="route('contacts.index')" :active="route().current('contacts.index')">
+                            Contacts
                         </breeze-responsive-nav-link>
                     </div>
 

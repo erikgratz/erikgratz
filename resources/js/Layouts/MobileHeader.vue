@@ -45,27 +45,27 @@
             <ul
                 class="flex flex-row">
                 <li>
-                    <inertia-link class="block px-4 py-1 md:p-2 lg:px-4"
+                    <inertia-link class="block px-4 py-1 md:p-2 lg:px-4" @click="isNavOpen = false"
                                   :class="($page.component == 'Home') ? selectedColor : unselectedColor"
                                   href="/"
                                   title="Link">Home
                     </inertia-link>
                 </li>
                 <li>
-                    <inertia-link class="block px-4 py-1 md:p-2 lg:px-4"
+                    <inertia-link class="block px-4 py-1 md:p-2 lg:px-4" @click="isNavOpen = false"
                                   :class="($page.component == 'Blog') ? selectedColor : unselectedColor"
                                   href="/blog"
                                   title="Active Link">Blog
                     </inertia-link>
                 </li>
                 <li>
-                    <inertia-link class="block px-4 py-1 md:p-2 lg:px-4"
+                    <inertia-link class="block px-4 py-1 md:p-2 lg:px-4" @click="isNavOpen = false"
                                   :class="($page.component == 'Portfolio') ? selectedColor : unselectedColor"
                                   href="/portfolio" title="Link">Portfolio
                     </inertia-link>
                 </li>
                 <li v-if="!['Home','Blog','Portfolio'].includes( $page.component)">
-                    <inertia-link class="block px-4 py-1 md:p-2 lg:px-4"
+                    <inertia-link class="block px-4 py-1 md:p-2 lg:px-4" @click="isNavOpen = false"
                                   :class="selectedColor"
                                   :href="$page.url" title="Link">{{ $page.component }}
                     </inertia-link>
@@ -112,7 +112,7 @@ export default {
             selectedColor: 'text-mint',
             unselectedColor: 'text-purple-600',
             isMenuOpen: false,
-            isNavOpen: true,
+            isNavOpen: false,
             menuYPos: false,
             view: {
                 atTopOfPage: true,
