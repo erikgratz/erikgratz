@@ -1,1 +1,0 @@
-(self.webpackChunk=self.webpackChunk||[]).push([[348],{9348:(e,n,s)=>{"use strict";s.r(n),s.d(n,{default:()=>o});const r={components:{},props:["errors","auth","canLogin","canRegister","laravelVersion","phpVersion","messages"],mounted:function(){},render:function(e,n,s,r,o,t){return null}},o=r}}]);

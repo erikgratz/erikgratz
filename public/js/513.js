@@ -1,1 +1,0 @@
-(self.webpackChunk=self.webpackChunk||[]).push([[513],{2513:(n,e,o)=>{"use strict";o.r(e),o.d(e,{default:()=>p});var t=o(5166);const c={components:{},props:{},mounted:function(){},render:function(n,e,o,c,p,r){return(0,t.openBlock)(),(0,t.createBlock)("h1",null,(0,t.toDisplayString)(n.$page.component),1)}},p=c}}]);

@@ -11,7 +11,7 @@
             </div>
             <div class="flex-col">
                 <social-button
-                    :link="'mailto:' + email"
+                    :link="'mailto:erik@erikgratz.com'"
                     name="Direct Email"
                     alt-text="A Link to send me an Email"
                 ></social-button>

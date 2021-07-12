@@ -69,7 +69,7 @@ Route::get('/blog', function(){
 
 Route::get('/portfolio', function(){
     return Inertia::render('Portfolio', [
-
+        'portfolioThings' => config('portfolio')
     ]);
 });
 
