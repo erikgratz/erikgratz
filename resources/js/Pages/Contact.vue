@@ -2,16 +2,21 @@
 
     <div class="w-full h-screen font-sans bg-cover bg-landscape">
         <div class="w-full flex flex-row my-8 items-center justify-center">
-                <social-button
-                    :link="resumeUrl"
-                    name="My Resume"
-                    alt-text="A Link to My Resume"
-                ></social-button>
-                <social-button
-                    :link="'mailto:erik@erikgratz.com'"
-                    name="Direct Email"
-                    alt-text="A Link to send me an Email"
-                ></social-button>
+            <social-button
+                :link="resumeUrl"
+                name="My Resume"
+                alt-text="A Link to My Resume"
+            ></social-button>
+            <social-button
+                :link="'mailto:' + email"
+                name="Direct Email"
+                alt-text="A Link to send me an Email"
+            ></social-button>
+            <social-button
+                :link="'tel:' + phone"
+                name="Call me!"
+                alt-text="A Link to open a phone call to me"
+            ></social-button>
         </div>
         <div class="container flex items-center justify-center flex-1 h-auto mx-auto">
             <div class="w-full max-w-lg">
@@ -53,7 +58,9 @@
                                     name="contact"
                                     v-model="form.contact"
                                 />
-                                <p v-if="$attrs.errors.contact" class="text-red-500 text-xs">{{ $attrs.errors.contact }}</p>
+                                <p v-if="$attrs.errors.contact" class="text-red-500 text-xs">{{
+                                        $attrs.errors.contact
+                                    }}</p>
                             </div>
                         </div>
                         <div class="mb-2">
@@ -80,7 +87,9 @@
                                     name="message"
                                     v-model="form.message"
                                 />
-                                <p v-if="$attrs.errors.message" class="text-red-500 text-xs">{{ $attrs.errors.message }}</p>
+                                <p v-if="$attrs.errors.message" class="text-red-500 text-xs">{{
+                                        $attrs.errors.message
+                                    }}</p>
                             </div>
                         </div>
                         <div class="flex items-center justify-between mt-4">
@@ -104,18 +113,16 @@
 </template>
 <script>
 
-import { reactive } from 'vue'
-import { Inertia } from '@inertiajs/inertia'
+import {reactive} from 'vue'
+import {Inertia} from '@inertiajs/inertia'
 import QRCodeElement from "../Components/QRCodeElement";
 import SocialButton from "../Components/SocialButton";
-
-
 
 
 export default {
     components: {SocialButton, QRCodeElement},
     props: ['phone', 'email', 'resumeUrl', 'submitButtonText'],
-    setup(){
+    setup() {
         const form = reactive({
             name: null,
             contact: null,
