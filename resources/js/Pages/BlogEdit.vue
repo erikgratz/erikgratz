@@ -217,7 +217,7 @@
 <script>
 
 import {Editor, EditorContent, BubbleMenu, FloatingMenu} from '@tiptap/vue-3'
-import {defaultExtensions} from '@tiptap/starter-kit'
+import StarterKit from '@tiptap/starter-kit'
 import BreezeAuthenticatedLayout from '@/Layouts/Authenticated'
 import Multiselect from '@vueform/multiselect'
 
@@ -238,7 +238,7 @@ export default {
             // postRoute: !this.isEditing ? '/blog/new' : ('/blog/edit/' + this.BlogPost.id),
             editor: new Editor({
                 content: this.BlogPost.body,
-                extensions: defaultExtensions(),
+                extensions: [ StarterKit ],
                 editorProps: {
                     attributes: {
                         class:

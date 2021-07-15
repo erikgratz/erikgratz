@@ -33,7 +33,7 @@
     "dependencies": {
         "@meforma/vue-toaster": "^1.2.2",
         "@tailwindcss/typography": "^0.4.0",
-        "@tiptap/starter-kit": "*",
+        "@tiptap/starter-kit": "^2.0.0-beta.82",
         "@tiptap/vue-3": "*",
         "@vue-hero-icons/solid": "^1.7.2",
         "@vueform/multiselect": "^2.0.1",
