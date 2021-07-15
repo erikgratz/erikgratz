@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Casts\AsArrayObject;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Log;
@@ -11,11 +12,11 @@ class BlogPost extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title','user_id','posted','edited','subtitle','body','is_public'];
+    protected $fillable = ['title','user_id','posted','edited','subtitle','body','is_public', 'tags'];
 
     protected $dates = ['posted','edited'];
 
-    protected $casts = ['is_public' => 'bool'];
+    protected $casts = ['is_public' => 'bool', 'tags' => AsArrayObject::class];
 
     const NOT_POSTED = 'not posted';
     const NOT_EDITED = 'never edited';

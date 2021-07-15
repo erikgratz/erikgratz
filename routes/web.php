@@ -96,9 +96,21 @@ Route::middleware(['auth', 'verified'])->group(function (){
     Route::resource('contacts', \App\Http\Controllers\ContactController::class)->only('update','delete');
 
     Route::get('/blog/edit/{blog_post_id}', function($blog_post_id){
+        //getting existing tags
+        $posts = \App\Models\BlogPost::all('tags')->toArray();
+        $posts = array_column($posts, 'tags');
+        $tags = [];
+        foreach($posts as $tagArr){
+            if($tagArr){
+                $tags = array_merge($tags, $tagArr);
+            }
+        }
+        $tags = array_unique($tags);
+        $tags = array_combine(array_values($tags),array_values($tags));
         return Inertia::render('BlogEdit', [
             'BlogPost' => \App\Models\BlogPost::with('author')->find($blog_post_id),
             'mode' => 'edit',
+            'multiOptions' => $tags
             ]);
     });
 

@@ -36,6 +36,7 @@
         "@tiptap/starter-kit": "*",
         "@tiptap/vue-3": "*",
         "@vue-hero-icons/solid": "^1.7.2",
+        "@vueform/multiselect": "^2.0.1",
         "qrcode.vue": "^3.2.2",
         "vue-click-outside": "^1.1.0",
         "vue-tailwind": "^2.2.1",
