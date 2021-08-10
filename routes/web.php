@@ -33,6 +33,12 @@ Route::get('/play', function() {
     ]);
 });
 
+Route::get('/mock/{page}', function($page) {
+    return Inertia::render('Mocks', [
+        'page' => $page,
+    ]);
+});
+
 Route::get('/contact', function () {
     return Inertia::render('Contact', [
         'phone' => config('contact.phone'),
@@ -41,6 +47,10 @@ Route::get('/contact', function () {
         'submitButtonText' => \Illuminate\Support\Collection::make(['Validate me...', 'I\'m hungry, feed me words.', 'I love you.', 'You matter.'])->random(),
     ]);
 })->name('contact');
+
+Route::get('/wedding', function(){
+    return Inertia::render('Wedding', []);
+});
 
 //Route::post('/contact', function(\Illuminate\Http\Request $request){
 //    $to_name = 'erikgratz.com contact message';

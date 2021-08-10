@@ -74,6 +74,9 @@ module.exports = {
             colors: {
                 'heart-purple': '#371BB1',
                 'mint': '#05FaB7',
+                'dark-black': '#000',
+                'pale-gold': '#e6c792',
+                'forest-green': '#25372f',
             },
             backgroundImage: theme => ({
                 'kid-face': "url('/storage/images/kid-face.png')",
