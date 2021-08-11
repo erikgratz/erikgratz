@@ -41,8 +41,10 @@
         "@tiptap/vue-3": "*",
         "@vue-hero-icons/solid": "^1.7.2",
         "@vueform/multiselect": "^2.0.1",
+        "hooper": "^0.3.4",
         "qrcode.vue": "^3.2.2",
         "vue-click-outside": "^1.1.0",
+        "vue-split-carousel": "^2.1.0",
         "vue-tailwind": "^2.2.1",
         "vue3-click-away": "^1.2.1",
         "vuex": "^4.0.0"

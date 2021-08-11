@@ -49,7 +49,13 @@ Route::get('/contact', function () {
 })->name('contact');
 
 Route::get('/wedding', function(){
-    return Inertia::render('Wedding', []);
+    $files = \Illuminate\Support\Facades\Storage::allFiles('public/images/engagement/');
+    $imageUrls = array_map(function($i){
+        return \Illuminate\Support\Facades\Storage::url($i);
+    },$files);
+    return Inertia::render('Wedding', [
+        'images' => $imageUrls
+    ]);
 });
 
 //Route::post('/contact', function(\Illuminate\Http\Request $request){
