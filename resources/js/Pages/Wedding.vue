@@ -1,9 +1,9 @@
 <template>
     <div class="bg-forest-green flex flex-col min-h-screen w-full items-center justify-center">
-        <div class="text-4xl font-serif text-pale-gold my-4">
+        <div class="text-4xl font-serif text-pale-gold my-4 text-center ">
             <p>Amy Hudgins & Erik Gratz</p>
         </div>
-        <div class="text-lg font-sans font-italic text-pale-gold p-2">
+        <div class="text-lg font-sans font-italic text-pale-gold p-2 text-center ">
             <p>October 16, 2021</p>
         </div>
         <div class="mx-16 text-center text-lg font-sans font-italic text-pale-gold p-2">
@@ -28,17 +28,11 @@
     </div>
 </template>
 <script>
-import { SplitCarousel, SplitCarouselItem } from "vue-split-carousel";
+
 import NoHeader from "@/Layouts/NoHeader";
+
 export default {
-    components: {
-        SplitCarousel,
-        SplitCarouselItem
-    },
     props: ['images'],
-    mounted() {
-        console.log(this.images)
-    },
     layout: NoHeader
 }
 </script>
