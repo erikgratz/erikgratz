@@ -28,7 +28,7 @@
     <div id="banner-four" class="flex items-center justify-center text-center text-gray-400 w-full  bg-black">
         <h1 class="m-auto py-8 px-2 text-4xl">The world is <span class="text-red-600">broken</span> right now, but it can be healed.
             <br>I believe that healing must start with love and understanding.
-            <br><br><div v-if="this.useRealHomepage">If you have a project that increases equality or worker power that you think I would be interested in, I encourage you to leave me a note.</div>
+           <div v-if="this.useRealHomepage"> <br><br>If you have a project that increases equality or worker power that you think I would be interested in, I encourage you to leave me a note.</div>
             <br><br>Thank you for visiting. I love you.
         </h1>
         <br><br>
