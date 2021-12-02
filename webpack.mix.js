@@ -21,6 +21,7 @@ mix.js('resources/js/app.js', 'public/js')
     ])
     .webpackConfig(require('./webpack.config'))
     .options({
+        processCssUrls: true,
         hmrOptions: {
             host: 'localhost',
             port: 8080,

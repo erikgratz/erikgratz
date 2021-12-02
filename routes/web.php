@@ -20,6 +20,7 @@ $exitCode = \Illuminate\Support\Facades\Artisan::call('storage:link', [] );
 Route::get('/', function () {
     //\Illuminate\Support\Facades\Log::error('FUCKING LOGGED');
     return Inertia::render('Home', [
+        'useRealHomepage' => config('app.useRealHomepage'),
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,

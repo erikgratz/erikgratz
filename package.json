@@ -42,9 +42,12 @@
         "@vue-hero-icons/solid": "^1.7.2",
         "@vueform/multiselect": "^2.0.1",
         "hooper": "^0.3.4",
+        "lingallery": "^1.3.7",
         "qrcode.vue": "^3.2.2",
+        "v-viewer": "^1.6.4",
         "vue-click-outside": "^1.1.0",
-        "vue-split-carousel": "^2.1.0",
+        "vue-gallery-slideshow": "^1.5.2",
+        "vue-masonry-gallery": "^1.1.1",
         "vue-tailwind": "^2.2.1",
         "vue3-click-away": "^1.2.1",
         "vuex": "^4.0.0"

@@ -83,6 +83,7 @@ module.exports = {
                 'code-wall': "url('/storage/images/purp-code.png')",
                 'bread-roses': "url('/storage/images/bread-and-roses.jpeg')",
                 'landscape': "url('/storage/images/landscape.jpeg')",
+                'amy-erik': "url('/storage/images/us.jpg')",
             }),
         },
     },

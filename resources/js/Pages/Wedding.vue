@@ -16,11 +16,8 @@
                 <br> Amy & Erik
             </p>
         </div>
-<!--        <split-carousel>-->
-<!--            <split-carousel-item v-for="(image, i) in images" :key="i">-->
-<!--                <img :src="image" alt="engagement photo">-->
-<!--            </split-carousel-item>-->
-<!--        </split-carousel>-->
+            <img v-for="(src, i) in images" :key="i" :src="src" />
+
 <!--        <div class="text-lg font-sans font-italic text-pale-gold underline p-2">-->
 <!--            <a href="http://www.theknot.com/erikandamygethitched"><p>&#45;&#45;Wedding Ceremony Details&#45;&#45;</p></a>-->
 <!--        </div>-->
@@ -33,6 +30,6 @@ import NoHeader from "@/Layouts/NoHeader";
 
 export default {
     props: ['images'],
-    layout: NoHeader
+    layout: NoHeader,
 }
 </script>
