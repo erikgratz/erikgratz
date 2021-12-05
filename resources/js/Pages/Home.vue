@@ -40,7 +40,6 @@ export default {
     components: {},
     props: ['useRealHomepage','errors', 'auth', 'canLogin', 'canRegister', 'laravelVersion', 'phpVersion', 'messages'],
     mounted() {
-        console.log(this.useRealHomepage)
     }
 }
 </script>
