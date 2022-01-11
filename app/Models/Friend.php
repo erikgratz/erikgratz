@@ -14,12 +14,4 @@ class Friend extends Model
     public function recommendations(){
         return $this->hasMany(FriendPlaceRecommendation::class, 'friend_id','id');
     }
-
-    public function getDisplayAttribute(){
-        $rtn = $this->toArray();
-        foreach($this->recommendations as $rec){
-            $rtn['recs'][] = $rec->toArray();
-        }
-        return $rtn;
-    }
 }

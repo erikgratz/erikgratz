@@ -15,7 +15,7 @@ class FriendPlaceRecommendationController extends Controller
     public function index()
     {
         $friends = Friend::with('recommendations')->get()->map(function($friend, $key){
-            return $friend->display;
+            return $friend->toArray();
         });
         return response($friends->toArray());
     }
