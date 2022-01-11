@@ -14,8 +14,8 @@ class ContactListEndpointTest extends TestCase{
 
     public function test_200_response(){
 
-        $res = $this->json('GET', '/api/contacts');
-        var_dump($res->getOriginalContent());
+        $res = $this->json('GET', 'api/contacts');
+//        var_dump($res->getOriginalContent());
     }
 
 }
