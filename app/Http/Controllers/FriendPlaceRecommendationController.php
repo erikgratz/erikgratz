@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Friend;
 use Illuminate\Http\Request;
 
 class FriendPlaceRecommendationController extends Controller
@@ -13,7 +14,10 @@ class FriendPlaceRecommendationController extends Controller
      */
     public function index()
     {
-        return response('spoot');
+        $friends = Friend::with('recommendations')->get()->map(function($friend, $key){
+            return $friend->display;
+        });
+        return response($friends->toArray());
     }
 
     /**

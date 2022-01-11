@@ -10,4 +10,16 @@ class Friend extends Model
     use HasFactory;
     protected $fillable = ['name','region','color'];
     protected $casts = ['region' => 'array'];
+
+    public function recommendations(){
+        return $this->hasMany(FriendPlaceRecommendation::class, 'friend_id','id');
+    }
+
+    public function getDisplayAttribute(){
+        $rtn = $this->toArray();
+        foreach($this->recommendations as $rec){
+            $rtn['recs'][] = $rec->toArray();
+        }
+        return $rtn;
+    }
 }

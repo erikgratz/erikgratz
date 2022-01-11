@@ -10,4 +10,8 @@ class FriendPlaceRecommendation extends Model
     use HasFactory;
     protected $fillable = ['friend_id','review_title','review_body','region'];
     protected $casts = ['region' => 'array'];
+
+    public function friend(){
+        return $this->belongsTo(Friend::class);
+    }
 }
