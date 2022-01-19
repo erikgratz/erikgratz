@@ -16,6 +16,8 @@
                          :img-url="portfolio.imgUrl"
                          :text="portfolio.text"
                          :title="portfolio.title"
+                         :link="portfolio.link"
+                         :link-text="portfolio.linkText"
         />
     </div>
 </template>

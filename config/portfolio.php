@@ -1,6 +1,13 @@
 <?php
 return [
     [
+        'imgUrl' => '/storage/images/bingo-cli.png',
+        'text' => 'Recently, I "played" bingo on a trip home, and realized that after choosing your bingo card, the act of "playing" is complete. Your fate is sealed. So, why not subject a computer to all the tedium of actually playing bingo? This program creates bingo boards, assigns them to players, and calls numbers until a player wins. It is as pointless as actual bingo, yet somehow less fun.',
+        'title' => 'Auto Bingo!',
+        'link' => 'https://github.com/chkltlabs/Auto-Bingo',
+        'linkText' => 'clone it on Github',
+    ],
+    [
         'imgUrl' => '/storage/images/droidku.png',
         'text' => 'I created a simple android app that reads a backend api endpoint to show the contact requests I get through my site. Other functionality includes downloading contact info and requesting its deletion from the main site. Its made with the Ionic framework using Vue 3 components and the composition API.',
         'title' => 'Companion Android App',
