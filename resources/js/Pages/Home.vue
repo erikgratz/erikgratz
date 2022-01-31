@@ -7,7 +7,7 @@
         <h1 class="ml-auto mr-4 my-auto text-4xl">Hello. I'm Erik. I love you.</h1>
     </div>
     <div id="banner-two" class="flex items-end justify-center w-full h-64 bg-black text-purple-600 text-left">
-        <h1 class="mr-auto ml-4 my-auto text-4xl">I'm a Back-End developer. I love laravel.</h1>
+        <h1 class="mr-auto ml-4 my-auto text-4xl">I'm a full-stack developer. I love laravel and vue.</h1>
         <div class="ml-auto mr-0 bg-code-wall bg-right bg-cover bg-no-repeat w-1/2">
             <div class="flex h-64 from-black bg-gradient-to-r"/>
         </div>
