@@ -77,6 +77,7 @@ module.exports = {
                 'dark-black': '#000',
                 'pale-gold': '#e6c792',
                 'forest-green': '#25372f',
+                'dopegray' : '#515159',
             },
             backgroundImage: theme => ({
                 'kid-face': "url('/storage/images/kid-face.png')",
