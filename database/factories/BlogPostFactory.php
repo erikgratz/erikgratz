@@ -28,7 +28,8 @@ class BlogPostFactory extends Factory
             'edited' => now(),
             'subtitle' => $this->faker->bs,
             'body' => $this->faker->bs,
-            'is_public' => $this->faker->boolean
+            'is_public' => $this->faker->boolean,
+            'tags' => [$this->faker->word,$this->faker->word,$this->faker->word,$this->faker->word,]
         ];
     }
 }

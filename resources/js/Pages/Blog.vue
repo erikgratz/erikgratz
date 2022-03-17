@@ -84,22 +84,13 @@ export default {
             }
             return this.posts.filter(post => {
                 let s = this.filters.searchBoxValue.toLowerCase();
-                return post.title.toLowerCase().indexOf(s) !== -1
+                return (post.title.toLowerCase().indexOf(s) !== -1
                     || post.subtitle.toLowerCase().indexOf(s) !== -1
                     || post.body.toLowerCase().indexOf(s) !== -1
-                    || post.author.name.toLowerCase().indexOf(s) !== -1
+                    || post.author.name.toLowerCase().indexOf(s) !== -1)
+                    || post.tags.includes(s)
             })
         }
     },
-    methods: {
-        // open(post){
-        //     console.log('open')
-        //     this.whoIsOpen = post
-        // },
-        // close(){
-        //     console.log('close')
-        //     this.whoIsOpen = null
-        // }
-    }
 }
 </script>

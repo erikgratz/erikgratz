@@ -59,7 +59,7 @@
                                             <div class="text-sm text-gray-900">{{ post.message }}</div>
                                         </td>
                                         <td>
-                                            <inertia-link :href="'/contacts/' + post.id" method="delete" class="text-indigo-600 hover:text-indigo-900">Delete</inertia-link>
+                                            <inertia-link :href="'/contacts/' + post.id" method="delete" as="button" class="text-indigo-600 hover:text-indigo-900">Delete</inertia-link>
                                         </td>
                                     </tr>
 

@@ -1,6 +1,18 @@
 <?php
 return [
     [
+        'imgUrl' => '/storage/images/bingo-cli.png',
+        'text' => 'Recently, I "played" bingo on a trip home, and realized that after choosing your bingo card, the act of "playing" is complete. Your fate is sealed. So, why not subject a computer to all the tedium of actually playing bingo? This program creates bingo boards, assigns them to players, and calls numbers until a player wins. It is as pointless as actual bingo, yet somehow less fun.',
+        'title' => 'Auto Bingo!',
+        'link' => 'https://github.com/chkltlabs/Auto-Bingo',
+        'linkText' => 'clone it on Github',
+    ],
+    [
+        'imgUrl' => '/storage/images/droidku.png',
+        'text' => 'I created a simple android app that reads a backend api endpoint to show the contact requests I get through my site. Other functionality includes downloading contact info and requesting its deletion from the main site. Its made with the Ionic framework using Vue 3 components and the composition API.',
+        'title' => 'Companion Android App',
+    ],
+    [
         'imgUrl' => '/storage/images/toast.png',
         'text' => 'Hopefully you\'ve noticed the toasts that appear in the corner of your screen. The system driving these is a websocket server running through a proxy address, backed by the excellent laravel-websockets package, and picked up by the equally great Laravel Echo on the front side. There should be a toast on each full page load when the websocket connection is established, as well as a toast each time anyone uses my /contact page to send me a note.',
         'title' => 'Websocket driven toasts!',
@@ -14,10 +26,5 @@ return [
         'imgUrl' => '/storage/images/siteFiletree.png',
         'text' => 'My website (welcome, by the way) is made with MySql, Laravel, Inertia.js, Vue 3 and TailwindCSS. Its hosted on DigitalOcean servers with Laravel Forge for management and deployment. I originally started messing around with this site to get myself some reps doing frontend work, It\'s certainly not perfect, but I am proud of it nonetheless. I\'d love to do more frontend work, so any constructive criticism would be appreciated.',
         'title' => 'This website and its backend!',
-    ],
-    [
-        'imgUrl' => null,
-        'text' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-        'title' => 'Lorem Ipsum Title yo',
     ],
 ];

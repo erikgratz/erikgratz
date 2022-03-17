@@ -18,7 +18,7 @@ class CreateMasterUserRecord extends Migration
         \App\Models\User::create([
             'name' => 'Erik G',
             'email' => 'erik@erikgratz.com',
-            'password' => Hash::make('15Characters!!!'),
+            'password' => Hash::make(env('MASTER_PASSWORD')),
             'imageUrl' => 'storage/images/face.png'
         ]);
     }

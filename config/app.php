@@ -232,4 +232,7 @@ return [
 
     ],
 
+    //hides Socialist homepage stuff
+    'useRealHomepage' => false,
+
 ];

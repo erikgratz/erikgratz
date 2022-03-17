@@ -17,5 +17,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\BlogPost::truncate();
         \App\Models\BlogPost::factory()->count(5)->create();
         $this->call(ContactSeeder::class);
+        $this->call(FriendSeeder::class);
+        $this->call(FriendPlaceRecommendationSeeder::class);
     }
 }

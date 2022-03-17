@@ -20,6 +20,7 @@ $exitCode = \Illuminate\Support\Facades\Artisan::call('storage:link', [] );
 Route::get('/', function () {
     //\Illuminate\Support\Facades\Log::error('FUCKING LOGGED');
     return Inertia::render('Home', [
+        'useRealHomepage' => config('app.useRealHomepage'),
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
@@ -33,6 +34,12 @@ Route::get('/play', function() {
     ]);
 });
 
+Route::get('/mock/{page}', function($page) {
+    return Inertia::render('Mocks', [
+        'page' => $page,
+    ]);
+});
+
 Route::get('/contact', function () {
     return Inertia::render('Contact', [
         'phone' => config('contact.phone'),
@@ -41,6 +48,16 @@ Route::get('/contact', function () {
         'submitButtonText' => \Illuminate\Support\Collection::make(['Validate me...', 'I\'m hungry, feed me words.', 'I love you.', 'You matter.'])->random(),
     ]);
 })->name('contact');
+
+Route::get('/wedding', function(){
+    $files = \Illuminate\Support\Facades\Storage::allFiles('public/images/engagement/');
+    $imageUrls = array_map(function($i){
+        return \Illuminate\Support\Facades\Storage::url($i);
+    },$files);
+    return Inertia::render('Wedding', [
+        'images' => $imageUrls
+    ]);
+});
 
 //Route::post('/contact', function(\Illuminate\Http\Request $request){
 //    $to_name = 'erikgratz.com contact message';
@@ -96,9 +113,21 @@ Route::middleware(['auth', 'verified'])->group(function (){
     Route::resource('contacts', \App\Http\Controllers\ContactController::class)->only('update','delete');
 
     Route::get('/blog/edit/{blog_post_id}', function($blog_post_id){
+        //getting existing tags
+        $posts = \App\Models\BlogPost::all('tags')->toArray();
+        $posts = array_column($posts, 'tags');
+        $tags = [];
+        foreach($posts as $tagArr){
+            if($tagArr){
+                $tags = array_merge($tags, $tagArr);
+            }
+        }
+        $tags = array_unique($tags);
+        $tags = array_combine(array_values($tags),array_values($tags));
         return Inertia::render('BlogEdit', [
             'BlogPost' => \App\Models\BlogPost::with('author')->find($blog_post_id),
             'mode' => 'edit',
+            'multiOptions' => $tags
             ]);
     });
 
